@@ -4,11 +4,10 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 from engine import MicrostructureEngine
-
-# Application Setup Configuration
+# 1. Application Setup Configuration
 st.set_page_config(page_title="Quant Microstructure Engine", layout="wide")
-st.title("🎲 Stochastic Market Microstructure Engine")
-# Injection block to hide Streamlit header toolbar, repository icons, and main menu footer
+
+# 2. Security Style Injection (GitHub Stealth Fix)
 st.markdown(
     """
     <style>
@@ -21,6 +20,8 @@ st.markdown(
     """,
     unsafe_allow_all_html=True
 )
+
+st.title("🎲 Stochastic Market Microstructure Engine")
 # Sidebar Dynamic Hyperparameters Configuration
 n_ticks = st.sidebar.slider("Historical Ticks Vector Count", 200, 2000, 600)
 n_steps = st.sidebar.slider("Chapman-Kolmogorov Horizon (N-Steps)", 1, 10, 3)
