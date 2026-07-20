@@ -8,14 +8,36 @@ from engine import MicrostructureEngine
 st.set_page_config(page_title="Quant Microstructure Engine", layout="wide")
 
 # 2. Security Style Injection (GitHub Stealth Fix)
+
+# 2. Advanced Security Style Injection (Absolute GitHub & Toolbar Purge)
 st.markdown(
     """
     <style>
-    #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
-    header {visibility: hidden;}
-    .viewerBadge_container__1QS13 {display: none !important;}
-    input-btn-overview__github {display: none !important;}
+    /* Pure header metadata and toolbar elements removal */
+    [data-testid="stHeader"] {
+        display: none !important;
+        visibility: hidden !important;
+    }
+    .stAppDeployButton {
+        display: none !important;
+        visibility: hidden !important;
+    }
+    #MainMenu {
+        display: none !important;
+        visibility: hidden !important;
+    }
+    footer {
+        display: none !important;
+        visibility: hidden !important;
+    }
+    /* Secondary fallback targets for standard options menu */
+    header {
+        display: none !important;
+        visibility: hidden !important;
+    }
+    .viewerBadge_container__1QS13 {
+        display: none !important;
+    }
     </style>
     """,
     unsafe_allow_all_html=True
