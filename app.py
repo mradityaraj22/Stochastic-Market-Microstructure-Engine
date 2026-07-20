@@ -4,44 +4,9 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 from engine import MicrostructureEngine
-# 1. Application Setup Configuration
+
+# Application Setup Configuration Layer
 st.set_page_config(page_title="Quant Microstructure Engine", layout="wide")
-
-# 2. Security Style Injection (GitHub Stealth Fix)
-
-# 2. Advanced Security Style Injection (Absolute GitHub & Toolbar Purge)
-st.markdown(
-    """
-    <style>
-    /* Pure header metadata and toolbar elements removal */
-    [data-testid="stHeader"] {
-        display: none !important;
-        visibility: hidden !important;
-    }
-    .stAppDeployButton {
-        display: none !important;
-        visibility: hidden !important;
-    }
-    #MainMenu {
-        display: none !important;
-        visibility: hidden !important;
-    }
-    footer {
-        display: none !important;
-        visibility: hidden !important;
-    }
-    /* Secondary fallback targets for standard options menu */
-    header {
-        display: none !important;
-        visibility: hidden !important;
-    }
-    .viewerBadge_container__1QS13 {
-        display: none !important;
-    }
-    </style>
-    """,
-    unsafe_allow_all_html=True
-)
 
 st.title("🎲 Stochastic Market Microstructure Engine")
 # Sidebar Dynamic Hyperparameters Configuration
