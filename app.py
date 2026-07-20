@@ -8,7 +8,19 @@ from engine import MicrostructureEngine
 # Application Setup Configuration
 st.set_page_config(page_title="Quant Microstructure Engine", layout="wide")
 st.title("🎲 Stochastic Market Microstructure Engine")
-
+# Injection block to hide Streamlit header toolbar, repository icons, and main menu footer
+st.markdown(
+    """
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    .viewerBadge_container__1QS13 {display: none !important;}
+    input-btn-overview__github {display: none !important;}
+    </style>
+    """,
+    unsafe_allow_all_html=True
+)
 # Sidebar Dynamic Hyperparameters Configuration
 n_ticks = st.sidebar.slider("Historical Ticks Vector Count", 200, 2000, 600)
 n_steps = st.sidebar.slider("Chapman-Kolmogorov Horizon (N-Steps)", 1, 10, 3)
