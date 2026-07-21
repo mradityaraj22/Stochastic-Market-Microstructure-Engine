@@ -5,42 +5,15 @@ import plotly.express as px
 import plotly.graph_objects as go
 from engine import MicrostructureEngine
 
-# 1. Page Configuration
+# 1. Native Page Configuration
 st.set_page_config(
     page_title="Quant Microstructure Engine", 
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
-# 2. Complete Mobile & Desktop Stealth Override (Hides Top Toolbar & Bottom Floating Avatar)
-st.markdown(
-    """
-    <style>
-    /* Top Header & Toolbar Purge */
-    [data-testid="stHeader"], 
-    [data-testid="stToolbar"], 
-    .stAppDeployButton, 
-    #MainMenu, header {
-        display: none !important;
-        visibility: hidden !important;
-        height: 0px !important;
-    }
-    
-    /* Bottom Right Avatar & Viewer Badge Removal */
-    [data-testid="stDecoration"],
-    [data-testid="stStatusWidget"],
-    div[class*="viewerBadge"],
-    div[data-testid="stAppViewerBadge"],
-    .stAppViewerBadge,
-    footer {
-        display: none !important;
-        visibility: hidden !important;
-        height: 0px !important;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+# 2. Native Stealth Hack (Bypasses CSS Parser Completely)
+st.html("<style>[data-testid='stHeader'], [data-testid='stToolbar'], .stAppDeployButton, #MainMenu, footer, header {display: none !important; visibility: hidden !important; height: 0px !important;}</style>")
 
 st.title("🎲 Stochastic Market Microstructure Engine")
 # Sidebar Dynamic Hyperparameters Configuration
