@@ -5,9 +5,28 @@ import plotly.express as px
 import plotly.graph_objects as go
 from engine import MicrostructureEngine
 
+# 1. Page Config Setup
+st.set_page_config(
+    page_title="Quant Microstructure Engine", 
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 
-# 1. Server-Side Application Layout Settings
-st.set_page_config(page_title="Quant Microstructure Engine", layout="wide")
+# 2. Universal Stealth CSS Injection (Clean & Mobile-Safe)
+st.markdown(
+    """
+    <style>
+    /* Hide Header, Toolbar, Footer, and Deploy Buttons across all devices */
+    [data-testid="stHeader"] {display: none !important;}
+    [data-testid="stToolbar"] {display: none !important;}
+    .stAppDeployButton {display: none !important;}
+    #MainMenu {visibility: hidden !important;}
+    footer {visibility: hidden !important;}
+    header {visibility: hidden !important;}
+    </style>
+    """,
+    unsafe_allow_all_html=True
+)
 
 st.title("🎲 Stochastic Market Microstructure Engine")
 # Sidebar Dynamic Hyperparameters Configuration
