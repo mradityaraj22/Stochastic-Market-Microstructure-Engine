@@ -1,6 +1,9 @@
 [client]
 showErrorDetails = false
-toolbarMode = "viewer"
+toolbarMode = "minimal"
 
 [ui]
 hideTopBar = true
+
+[global]
+developmentMode = false

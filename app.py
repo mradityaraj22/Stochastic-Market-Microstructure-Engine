@@ -9,42 +9,6 @@ from engine import MicrostructureEngine
 # 1. Server-Side Application Layout Settings
 st.set_page_config(page_title="Quant Microstructure Engine", layout="wide")
 
-# 2. Strict Layout Injection (Desktop + Mobile Visibility Overrides)
-st.markdown(
-    """
-    <style>
-    /* Universal selectors for complete layout cleanup */
-    [data-testid="stHeader"], 
-    .stAppDeployButton, 
-    #MainMenu, 
-    footer, 
-    header,
-    [className*="viewerBadge"] {
-        display: none !important;
-        visibility: hidden !important;
-        height: 0px !important;
-    }
-    
-    /* Strict Mobile Screen Media Framework Query */
-    @media screen and (max-width: 768px) {
-        [data-testid="stHeader"] {
-            display: none !important;
-            visibility: hidden !important;
-            height: 0px !important;
-        }
-        .stAppDeployButton {
-            display: none !important;
-            visibility: hidden !important;
-        }
-        div[class*="stHeader"] {
-            display: none !important;
-        }
-    }
-    </style>
-    """,
-    unsafe_allow_all_html=True
-)
-
 st.title("🎲 Stochastic Market Microstructure Engine")
 # Sidebar Dynamic Hyperparameters Configuration
 n_ticks = st.sidebar.slider("Historical Ticks Vector Count", 200, 2000, 600)
