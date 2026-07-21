@@ -5,16 +5,15 @@ import plotly.express as px
 import plotly.graph_objects as go
 from engine import MicrostructureEngine
 
-# 1. Page Configuration
+# 1. Native Page Configuration
 st.set_page_config(
     page_title="Quant Microstructure Engine", 
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
-# 2. Crash-Proof Stealth Injection (Single-line Raw String Syntax)
-hide_css = r"<style>[data-testid='stHeader'], [data-testid='stToolbar'], .stAppDeployButton, #MainMenu, footer, header {display: none !important; visibility: hidden !important; height: 0px !important;}</style>"
-st.markdown(hide_css, unsafe_allow_all_html=True)
+# 2. Native Stealth Hack (Bypasses CSS Parser Completely)
+st.html("<style>[data-testid='stHeader'], [data-testid='stToolbar'], .stAppDeployButton, #MainMenu, footer, header {display: none !important; visibility: hidden !important; height: 0px !important;}</style>")
 
 st.title("🎲 Stochastic Market Microstructure Engine")
 # Sidebar Dynamic Hyperparameters Configuration
